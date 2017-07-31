@@ -24,6 +24,6 @@ node_modules/
 src/bplayer.old.js
 
 # Binaries
-test/bplayer.dev.js
-dist/bplayer.min.js
-bplayer.dev.js.map
+test/bplayer-ef.dev.js
+dist/bplayer-ef.min.js
+dist/bplayer-ef.dev.js.map

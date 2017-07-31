@@ -3,7 +3,7 @@ bPlayer-ef
 
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://raw.githubusercontent.com/TheNeuronProject/bPlayer-ef/master/LICENSE) [![npm](https://img.shields.io/npm/dt/bplayer-ef.svg?style=flat-square)](https://www.npmjs.com/package/bplayer-ef)
 
-[Demo](http://bplayer.js.org)
+[Demo](http://bplayer-ef.ccoooss.com)
 
 The ef.js based bPlayer
 

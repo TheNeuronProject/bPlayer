@@ -15,8 +15,8 @@ const { version } = require('../package.json')
 module.exports = {
 	moduleName: 'bPlayer',
 	entry: 'src/main.js',
-	devDest: 'test/bplayer.dev.js',
-	proDest: 'dist/bplayer.min.js',
+	devDest: 'test/bplayer-ef.dev.js',
+	proDest: 'dist/bplayer-ef.min.js',
 	format: 'umd',
 	sourceMap: true,
 	plugins: [
