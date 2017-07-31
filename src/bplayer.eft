@@ -1,0 +1,75 @@
+>bplayer.bPlayer.{{narrowClass}}.{{slimClass}}
+	>audio#audio
+		%src = {{src}}
+		%autoplay = {{autoplay}}
+		%muted = {{muted}}
+		%loop = {{loop}}
+		@seeking = seeking
+		@seeked = seeked
+		@canplay = resume
+		@timeupdate = timeupdate
+		@progress = progress
+		@volumechange = volumechange
+		@play = play
+		@pause = pause
+		@ended = ended
+	>div.info_bplayer
+		>div.titlewrap_bplayer
+			>span.title_bplayer
+				.{{title = Unknown Title}}
+			>span.author_bplayer
+				.{{artist = Unknown Artist}}
+		>div.time_bplayer
+			>span.current_bplayer
+				.{{current = 00:00}}
+			>span.total_bplayer
+				.{{total = 00:00}}
+		>div.buttons_bplayer
+			>div.{{loopDisabled = disabled_bplayer}}.btn_bplayer
+				@click = toggleLoop
+				>i.iconfont_bplayer
+					%innerHTML = &&#xe600;
+			>div.volume_bplayer
+				>div.volumebtn_bplayer.btn_bplayer.{{volDisabled}}
+					@click = toggleMute
+					>i.iconfont_bplayer
+						%innerHTML = &&#xe602;
+				>div.volumebar_bplayer
+					>div.volumebg_bplayer
+					>div.volumeval_bplayer
+						#style = background-color: {{color = #A91212}}; box-shadow: {{color}} 0px 0px 3px; width: {{vol = 80}}px;
+					>div.volumectl_bplayer
+						@click = setVol
+						@mousedown = volDown
+						@mouseup = volUp
+						@mouseout = volUp
+						@mousemove = dragVol
+						@touchstart = volDown
+						@touchend = volUp
+						@touchmove = touchVol
+	>div.cover_bplayer
+		@click = togglePlay
+		>div.coverimg_bplayer
+			#style = background-image: url("{{cover}}");
+		>div.controlbtn_bplayer.playBtn_bplayer.{{playHidden}}
+			>i.iconfont_bplayer
+				%innerHTML = &&#xe601;
+		>div.controlbtn_bplayer.{{pauseHidden = hidden_bplayer}}
+			>i.iconfont_bplayer
+				%innerHTML = &&#xe603;
+	>div.progress_bplayer
+		>div.loaded_bplayer
+			#style = width: {{loaded = 0}}%;
+		>div.played_bplayer
+			#style = background-color: {{color}}; box-shadow: {{color}} 0px 0px 3px; width: {{played = 0}}%;
+			>div.glow_bplayer
+		>div.progressctl_bplayer#playControl
+			@click = seek
+			@mousedown = progressDown
+			@mouseup = progressUp
+			@mouseout = progressUp
+			@mousemove = dragSeek
+			@touchstart = progressDown
+			@touchend = progressUp
+			@touchmove = touchSeek
+	+slot

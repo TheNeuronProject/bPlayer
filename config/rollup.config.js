@@ -7,17 +7,18 @@ const replace = require('rollup-plugin-replace')
 const uglify = require('rollup-plugin-uglify')
 const progress = require('rollup-plugin-progress')
 const postcss = require('rollup-plugin-postcss')
-const html = require('rollup-plugin-html')
+const eft = require('rollup-plugin-eft')
+const json = require('rollup-plugin-json')
 const git = require('git-rev-sync')
 const { version } = require('../package.json')
 
 module.exports = {
 	moduleName: 'bPlayer',
-	entry: 'src/bplayer.js',
+	entry: 'src/main.js',
 	devDest: 'test/bplayer.dev.js',
 	proDest: 'dist/bplayer.min.js',
 	format: 'umd',
-	sourceMap: 'inline',
+	sourceMap: true,
 	plugins: [
 		progress({
 			clearLine: false
@@ -28,12 +29,11 @@ module.exports = {
 			browser: true,
 		}),
 		commonjs(),
-		html({
-			include: 'src/*.html'
-		}),
+		eft(),
+		json(),
 		postcss(),
 		eslint({
-			exclude: ['**/*.html', '**/*.css']
+			exclude: ['**/*.html', '**/*.css', '**/*.eft']
 		}),
 		buble({
 			transforms: {

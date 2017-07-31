@@ -12,19 +12,36 @@
 		(function() {
 			var init = function() {
 				document.removeEventListener('DOMContentLoaded', init, false);
-				var bp1 = new bPlayer("#bplayer1");
-				var bp2 = new bPlayer("#bplayer2");
-				bp1.color("#66ccff").autoplay(true).src("https://m1.jixun.moe/521371/192000/94100067566762c535b2ed589fb7eb8c5b8f2950cd81975849b6613f17b15644").title("Chaos of silence").artist("Sane Masayuki").cover("http://p1.music.126.net/9elGVkEwQ9QJj0K7ZrYsdA==/869713697571024.jpg?param=60x60");
-				bp2.color("#CC3366").src("https://m1.jixun.moe/454966295/192000/ebffe7b16ebd274560fe078f2ee0f175627c3b28b4323cfdbd498a54032a286d").loop(true).title("Re:xxx").artist("ELECTROCUTICA").cover("http://p3.music.126.net/BPyAZK0VD56feVGQi8DA0w==/18550960185547685.jpg?param=60x60");
-				var bp3 = new bPlayer("#bplayer3", {
+				var bp1 = new bPlayer({
+					color: '#66ccff',
+					autoplay: true,
+					src: 'https://m1.jixun.moe/521371/192000/94100067566762c535b2ed589fb7eb8c5b8f2950cd81975849b6613f17b15644',
+					title: 'Chaos of silence',
+					artist: 'Sane Masayuki',
+					cover: 'http://p1.music.126.net/9elGVkEwQ9QJj0K7ZrYsdA==/869713697571024.jpg?param=60x60'
+				});
+				bp1.$mount({target: '#bplayer1', option: 'replace'});
+				var bp2 = new bPlayer({
+					color: '#cc3366',
+					src: 'https://m1.jixun.moe/454966295/192000/ebffe7b16ebd274560fe078f2ee0f175627c3b28b4323cfdbd498a54032a286d',
+					title: 'Re:xxx',
+					artist: 'ELECTROCUTICA',
+					cover: 'http://p3.music.126.net/BPyAZK0VD56feVGQi8DA0w==/18550960185547685.jpg?param=60x60',
+					loop: true,
+					slim: true
+				});
+				bp2.$mount({target: '#bplayer2', option: 'replace'});
+				var bp3 = new bPlayer({
 					color: "#41bffe",
 					src: "https://m1.jixun.moe/410042944/192000/3ffcda3ea383747ab4d04ab79f9a0b9fb25898be33bd3a91191eee4cd29f8824",
 					title: "Loopliness",
 					artist: "ClassicOldSong",
 					cover: "http://p1.music.126.net/oajD4HBRZYlMM1b7NVTlxA==/17816486416670349.jpg?param=30x30",
-					slim: true
+					narrow: true
 				});
-				bPlayer.scan();
+				bp3.$mount({target: '#bplayer3', option: 'replace'});
+				window.dispatchEvent(new Event('resize'));
+				// bPlayer.scan();
 				window.bp1 = bp1;
 				window.bp2 = bp2;
 				window.bp3 = bp3;
@@ -84,14 +101,16 @@
 			<div id="bplayer1"></div>
 		</div>
 		<div class="test">
-			<h3>#bplayer2/bp2 with loop enabled</h3>
+			<h3>#bplayer2/bp2 with loop enabled in slim mode</h3>
 			<div id="bplayer2"></div>
 		</div>
 		<div class="test">
-			<h3>#bplayer3/bp3 created from JSON with slim mode enabled</h3>
-			<div id="bplayer3"></div>
+			<h3>#bplayer3/bp3 with narrow mode enabled</h3>
+			<div class="narrow">
+				<div id="bplayer3"></div>
+			</div>
 		</div>
-		<div class="test">
+		<!--div class="test">
 			<h3>#bplayer4 converted from Audio element with loop enabled in narrow mode</h3>
 			<div class="narrow">
 				<audio id="bplayer4" controls="bplayer" loop="true" title="Before You Were Gone" artist="Xeuphoria" slim="false" color="#F55177" cover="http://p1.music.126.net/SM4DSR9CcPrIz2AuJMcbzQ==/7932976395107627.jpg?param=60x60" src="https://m1.jixun.moe/32924244/192000/d7e6fae7431c7fe07491a1ed136b094d9bda28dfcc08d8395641c1b481f53098"></audio>
@@ -102,10 +121,9 @@
 			<div class="narrow">
 				<audio id="bplayer5" controls="bplayer" title="Listen" artist="Said The Sky" slim="true" color="#FECB1F" cover="http://p1.music.126.net/nnM5AnJxhGbQ0kFGGMtg7w==/6642149744463772.jpg?param=60x60" src="https://m1.jixun.moe/29710964/192000/bbbf8b7878e54a2f265c7c2add1a5dc208a36afeb90c4f2468b51453f381e46f"></audio>
 			</div>
-		</div>
+		</div-->
 		<hr>
-		<p>You can control <code>bp1</code>, <code>bp2</code>, <code>bp3</code> in console, such as <code>bp1.color("#FF2870")</code><br>
-		As to those elements that converted from Audio tags, ypu can control them via it's original CSS selector, such as <br /><code>document.querySelector('#bplayer4').title = "whatever you want"</code></p>
+		<p>You can control <code>bp1</code>, <code>bp2</code>, <code>bp3</code> in console, such as <code>bp1.$data.color = "#FF2870"</code><br></p>
 		<p><b>*Allrights of music used in DEMO are reserved by their author*</b><br /><small>Whisper: Loopliness is created by myself 😂</small></p>
 		<br />
 		<div class="links">
