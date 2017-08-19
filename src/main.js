@@ -260,4 +260,4 @@ color: #FEDCBA;
 font-size: 12px;
 `
 // Show information when bPlayer loaded successfully.
-console.log(`%c bPlayer-ef %c v${VERSION} \n%c See http://bplayer.js.org for detail. `, ls1, ls2, ls3)
+console.log(`%c bPlayer-ef %c v${VERSION} \n%c See https://bplayer-ef.ccoooss.com/ for detail. `, ls1, ls2, ls3)

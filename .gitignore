@@ -27,3 +27,4 @@ src/bplayer.old.js
 test/bplayer-ef.dev.js
 dist/bplayer-ef.min.js
 dist/bplayer-ef.dev.js.map
+bplayer-ef.dev.js.map

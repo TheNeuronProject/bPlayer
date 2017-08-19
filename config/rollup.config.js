@@ -9,7 +9,6 @@ const progress = require('rollup-plugin-progress')
 const postcss = require('rollup-plugin-postcss')
 const eft = require('rollup-plugin-eft')
 const json = require('rollup-plugin-json')
-const git = require('git-rev-sync')
 const { version } = require('../package.json')
 
 module.exports = {
@@ -44,7 +43,7 @@ module.exports = {
 		}),
 		replace({
 			ENV: JSON.stringify(process.env.NODE_ENV || 'development'),
-			VERSION: JSON.stringify(`${version}-${git.short()}`)
+			VERSION: JSON.stringify(`${version}`)
 		}),
 		(process.env.NODE_ENV === 'production' && uglify())
 	]

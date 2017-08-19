@@ -1,6 +1,6 @@
 {
   "name": "bplayer-ef",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "A great replacement for audio elements",
   "main": "dist/bplayer-ef.min.js",
   "module": "src/main.js",
@@ -27,26 +27,25 @@
   "bugs": {
     "url": "https://github.com/TheNeuronProject/bPlayer-ef/issues"
   },
-  "homepage": "http://bplayer.js.org",
+  "homepage": "https://bplayer-ef.ccoooss.com/",
   "devDependencies": {
     "browser-sync": "^2.17.5",
-    "eslint": "^3.9.1",
-    "git-rev-sync": "^1.8.0",
-    "node-watch": "^0.4.1",
-    "rollup": "^0.36.3",
+    "eslint": "^4.5.0",
+    "node-watch": "^0.5.5",
+    "rollup": "^0.47.6",
     "rollup-plugin-buble": "^0.15.0",
-    "rollup-plugin-commonjs": "^5.0.5",
-    "rollup-plugin-eft": "^0.2.12",
-    "rollup-plugin-eslint": "^3.0.0",
+    "rollup-plugin-commonjs": "^8.1.0",
+    "rollup-plugin-eft": "^0.2.24",
+    "rollup-plugin-eslint": "^4.0.0",
     "rollup-plugin-json": "^2.3.0",
-    "rollup-plugin-node-resolve": "^2.0.0",
-    "rollup-plugin-postcss": "^0.2.0",
-    "rollup-plugin-progress": "^0.1.0",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "rollup-plugin-postcss": "^0.5.4",
+    "rollup-plugin-progress": "^0.4.0",
     "rollup-plugin-replace": "^1.1.1",
-    "rollup-plugin-uglify": "^1.0.1",
+    "rollup-plugin-uglify": "^2.0.1",
     "shelljs": "^0.7.5"
   },
   "dependencies": {
-    "ef.js": "^0.3.3-alpha.4"
+    "ef.js": "^0.3.4-beta.4"
   }
 }
