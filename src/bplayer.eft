@@ -4,6 +4,7 @@
 		%autoplay = {{autoplay}}
 		%muted = {{muted}}
 		%loop = {{loop}}
+		%volume = {{volume}}
 		@seeking = seeking
 		@seeked = seeked
 		@canplay = resume

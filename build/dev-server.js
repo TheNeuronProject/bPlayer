@@ -3,11 +3,11 @@ console.log('[RD]', 'Build starting...')
 const rollup = require('rollup').rollup
 const watch = require('node-watch')
 const {
-	moduleName,
+	name,
 	entry,
-	devDest: dest,
+	devDest: file,
 	format,
-	sourceMap,
+	sourcemap,
 	plugins
 } = require('../config/rollup.config')
 const browserSync = require('browser-sync').create()
@@ -19,7 +19,7 @@ let cache = {}
 const bundleWrite = (bundle) => {
 	console.log('[RD]', 'Writing bundle...')
 	cache = bundle
-	bundle.write({ dest, moduleName, format, sourceMap })
+	bundle.write({ file, name, format, sourcemap })
 }
 
 const startWatch = () => {

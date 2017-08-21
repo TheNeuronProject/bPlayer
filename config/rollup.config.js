@@ -12,12 +12,12 @@ const json = require('rollup-plugin-json')
 const { version } = require('../package.json')
 
 module.exports = {
-	moduleName: 'bPlayer',
+	name: 'bPlayer',
 	entry: 'src/main.js',
 	devDest: 'test/bplayer-ef.dev.js',
 	proDest: 'dist/bplayer-ef.min.js',
 	format: 'umd',
-	sourceMap: true,
+	sourcemap: true,
 	plugins: [
 		progress({
 			clearLine: false

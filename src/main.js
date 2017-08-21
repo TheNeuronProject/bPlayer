@@ -72,16 +72,16 @@ const methods = {
 	volUp({state: {status}}) {
 		status.volumedown = false
 	},
-	dragVol({state: {$refs: {audio}, status}, e}) {
+	dragVol({state: {$data, status}, e}) {
 		if (status.volumedown) {
 			const x = e.offsetX
-			if (x >= 0 && x <= 80) audio.volume = x / 80
+			if (x >= 0 && x <= 80) $data.volume = x / 80
 		}
 	},
-	touchVol({state: {$refs: {audio}, status}, e}) {
+	touchVol({state: {$data, status}, e}) {
 		if (status.volumedown) {
 			const x = e.touches[0].pageX - e.target.getBoundingClientRect().left
-			if (x >= 0 && x <= 80) audio.volume = x / 80
+			if (x >= 0 && x <= 80) $data.volume = x / 80
 		}
 	},
 	toggleMute({state: {$data, $refs: {audio}}}) {
@@ -174,24 +174,24 @@ const makeLoop = ({state: {$data}, value}) => {
 }
 
 // Prepare defaults
-const defaults = {
-	src: '',
-	cover: '',
-	title: 'Unknown',
-	artist: 'Unknown',
-	color: '#A91212',
-	volume: 1,
-	muted: false,
-	autoplay: false,
-	loop: false,
-	slim: false,
-	narrow: false
-}
+// const defaults = {
+// 	src: '',
+// 	cover: '',
+// 	title: 'Unknown',
+// 	artist: 'Unknown',
+// 	color: '#A91212',
+// 	volume: 1,
+// 	muted: false,
+// 	autoplay: false,
+// 	loop: false,
+// 	slim: false,
+// 	narrow: false
+// }
 
 const bPlayer = class extends content {
 	constructor(data) {
 		// Initialize data
-		data = Object.assign({}, defaults, data || {})
+		// data = Object.assign({}, defaults, data || {})
 		// Hold all operations
 		inform()
 
