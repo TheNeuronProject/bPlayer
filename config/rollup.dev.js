@@ -9,7 +9,7 @@ base.output.file = base.devDest
 base.plugins.push(browsersync(bsConfig))
 base.watch = {
 	chokidar: true,
-	include: 'src/**'
+	include: 'src/'
 }
 
 export default base

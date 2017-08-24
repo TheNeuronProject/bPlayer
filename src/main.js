@@ -1,5 +1,5 @@
 // Import everything
-import { inform, exec } from 'ef.js'
+import { inform, exec } from 'ef-core'
 import content from './bplayer.eft'
 import { version } from '../package.json'
 import './bplayer.css'

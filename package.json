@@ -1,6 +1,6 @@
 {
   "name": "bplayer-ef",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "A great replacement for audio elements",
   "main": "dist/bplayer-ef.min.js",
   "module": "src/main.js",

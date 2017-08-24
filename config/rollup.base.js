@@ -44,7 +44,7 @@ export default {
 	input: 'src/main.js',
 	output: {
 		name: 'bPlayer',
-		format: 'umd',
+		format: 'iife',
 		sourcemap: true
 	},
 	devDest: 'test/bplayer-ef.dev.js',
@@ -63,7 +63,7 @@ export default {
 		json(),
 		postcss(),
 		eslint({
-			exclude: ['**/*.html', '**/*.css', '**/*.eft']
+			exclude: ['**/*.html', '**/*.css', '**/*.eft', '**/*.json']
 		}),
 		buble({
 			transforms: {
