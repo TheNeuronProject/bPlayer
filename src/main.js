@@ -1,9 +1,7 @@
-/* global VERSION */
-'use strict'
-
 // Import everything
 import { inform, exec } from 'ef.js'
 import content from './bplayer.eft'
+import { version } from '../package.json'
 import './bplayer.css'
 
 const response = function(state) {
@@ -234,7 +232,7 @@ const bPlayer = class extends content {
 	}
 
 	static get version() {
-		return VERSION
+		return version
 	}
 }
 
@@ -260,4 +258,4 @@ color: #FEDCBA;
 font-size: 12px;
 `
 // Show information when bPlayer loaded successfully.
-console.log(`%c bPlayer-ef %c v${VERSION} \n%c See https://bplayer-ef.ccoooss.com/ for detail. `, ls1, ls2, ls3)
+console.log(`%c bPlayer-ef %c v${version} \n%c See https://bplayer-ef.ccoooss.com/ for detail. `, ls1, ls2, ls3)
