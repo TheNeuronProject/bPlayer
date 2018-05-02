@@ -5,7 +5,7 @@ import { version } from '../package.json'
 import './bplayer.css'
 
 const response = function(state) {
-	if (state.$element.clientWidth <= 460) {
+	if (state.$ctx.nodeInfo.element.clientWidth <= 460) {
 		state.$data.narrow = true
 	} else {
 		state.$data.narrow = false
