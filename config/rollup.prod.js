@@ -12,7 +12,7 @@ const config = {
 	plugins,
 	external: ['ef-core'],
 	globals: {
-		'ef-core': 'efCore'
+		'ef-core': 'ef'
 	}
 }
 
