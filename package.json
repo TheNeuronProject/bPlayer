@@ -1,6 +1,6 @@
 {
   "name": "bplayer-ef",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "A great replacement for audio elements",
   "main": "dist/bplayer-ef.min.js",
   "module": "src/main.js",
@@ -47,6 +47,6 @@
     "rollup-plugin-uglify": "^3.0.0"
   },
   "dependencies": {
-    "ef-core": "^0.8.0"
+    "ef-core": "^0.8.1"
   }
 }
